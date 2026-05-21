@@ -48,6 +48,26 @@ grammar:
 4. Replace `KageLexer` with a `FlexAdapter` wrapper, and the flat parser in
    `KageParserDefinition` with the generated parser and PSI element types.
 
+## Releasing / publishing
+
+Signing and publishing read secrets **from the environment only** — never commit
+them. Generate a signing certificate per the
+[JetBrains plugin signing guide](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html)
+and a Marketplace token at <https://plugins.jetbrains.com/author/me/tokens>.
+
+```bash
+export CERTIFICATE_CHAIN="$(cat chain.crt)"
+export PRIVATE_KEY="$(cat private.pem)"
+export PRIVATE_KEY_PASSWORD="…"
+export PUBLISH_TOKEN="…"
+
+./gradlew signPlugin       # sign the distribution
+./gradlew publishPlugin    # sign + upload to JetBrains Marketplace
+```
+
+The first version of a new plugin must be uploaded via the Marketplace web form
+and pass moderation; `publishPlugin` automates subsequent updates.
+
 ## Pull requests
 
 - Keep PRs focused; one feature or fix per PR.
