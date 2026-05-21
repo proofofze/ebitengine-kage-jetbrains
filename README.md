@@ -83,3 +83,10 @@ Issues and PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 [MIT](LICENSE) © proofofze
+
+## Disclaimer
+
+> ⚠️ This repository was built quickly, with low-to-minimal attention to
+> security. It is provided **as is**, with no warranty (see [LICENSE](LICENSE)).
+> **Use at your own risk** and **review the code yourself** before building,
+> installing, or running it.
