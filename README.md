@@ -12,13 +12,26 @@ Native (lexer-based) port of the VS Code extension
 
 ## Features
 
-- **Syntax highlighting** for `.kage` — keywords, types, builtins, numbers, comments
-- **Code completion** for keywords, types, and builtin functions
-- **Quick documentation** on hover for builtins and types
-- **Brace matching** and **comment toggling** (`//`, `/* */`)
-- **Live templates** (snippets): `fragment`, `vec2/3/4`, `mat2/3/4`, `imageSrcNAt`,
-  `imageSrcTextureSize`, `clamp`, `mix`, `smoothstep`, `discard`, …
-- **Configurable colors** under *Settings → Editor → Color Scheme → Kage*
+- **`.kage` file type** — dedicated file icon and editor association.
+- **Syntax highlighting** for:
+  - Keywords — `package`, `var`, `const`, `func`, `return`, `if`, `else`, `for`,
+    `break`, `continue`, `switch`, `case`, `default`, `discard`, `true`, `false`, `nil`
+  - Types — `bool`, `int`, `float`, `vec2`/`vec3`/`vec4`, `mat2`/`mat3`/`mat4`
+  - Builtin functions — math (`sin`, `cos`, `clamp`, `mix`, `smoothstep`,
+    `length`, `dot`, `normalize`, `dfdx`, …) and image/texture
+    (`imageSrc0At`…`imageSrc3At`, `imageSrcTextureSize`, `imageSrcRegionOnTexture`, …)
+  - Numbers, line (`//`) and block (`/* */`) comments, operators, and brackets
+- **Code completion** for keywords, types, and builtin functions.
+- **Quick documentation on hover** for builtins and types (signature + summary).
+- **Brace matching** for `{}`, `()`, and `[]`.
+- **Comment toggling** — line (`//`) and block (`/* */`).
+- **Live templates (snippets):**
+  - `fragment` — full `Fragment` shader entrypoint
+  - `vec2` / `vec3` / `vec4`, `mat2` / `mat3` / `mat4` — constructors
+  - `imageSrcNAt`, `imageSrcTextureSize`, `imageSrcRegionOnTexture` — image helpers
+  - `clamp`, `mix`, `smoothstep`, `discard` — common operations
+- **Configurable colors** — adjust every token type under
+  *Settings → Editor → Color Scheme → Kage*.
 
 ## Install
 
