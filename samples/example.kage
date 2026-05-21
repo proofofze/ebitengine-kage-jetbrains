@@ -1,0 +1,13 @@
+package main
+
+// Fragment tints the source image and pulses its brightness.
+func Fragment(dstPos vec4, srcPos vec2, color vec4) vec4 {
+	c := imageSrc0At(srcPos)
+	size := imageSrcTextureSize()
+	uv := srcPos / size
+
+	t := clamp(uv.x, 0.0, 1.0)
+	tint := mix(vec3(1.0, 0.2, 0.2), vec3(0.2, 0.2, 1.0), t)
+
+	return vec4(c.rgb*tint, c.a)
+}

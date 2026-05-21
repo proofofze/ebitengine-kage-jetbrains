@@ -1,0 +1,72 @@
+<idea-plugin>
+    <id>com.github.zpeg.kage</id>
+    <name>Kage</name>
+    <vendor email="reis.zpeg@gmail.com" url="https://github.com/proofofze/ebitengine-kage-jetbrains">proofofze</vendor>
+
+    <description><![CDATA[
+        <p>IDE support for <b>Kage</b>, the
+        <a href="https://ebitengine.org">Ebitengine</a> shading language, for
+        IntelliJ-platform IDEs (IntelliJ IDEA, GoLand, CLion, ...).</p>
+        <ul>
+            <li>Syntax highlighting for <code>.kage</code> files</li>
+            <li>Code completion for keywords, types, and builtin functions</li>
+            <li>Quick documentation on hover</li>
+            <li>Brace matching and comment toggling</li>
+            <li>Live templates (snippets) such as <code>fragment</code>, <code>vec4</code>, <code>imageSrcNAt</code></li>
+        </ul>
+        <p>Native port of the VS Code extension
+        <a href="https://github.com/sedyh/ebitengine-kage-vscode">sedyh/ebitengine-kage-vscode</a>.</p>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <h4>0.1.0</h4>
+        <ul>
+            <li>Initial release: highlighting, completion, hover docs, brace
+            matching, comment toggling, live templates, and a color settings page.</li>
+        </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType
+            name="Kage"
+            language="Kage"
+            extensions="kage"
+            implementationClass="com.github.zpeg.kage.KageFileType"
+            fieldName="INSTANCE"/>
+
+        <lang.parserDefinition
+            language="Kage"
+            implementationClass="com.github.zpeg.kage.KageParserDefinition"/>
+
+        <lang.syntaxHighlighterFactory
+            language="Kage"
+            implementationClass="com.github.zpeg.kage.KageSyntaxHighlighterFactory"/>
+
+        <lang.commenter
+            language="Kage"
+            implementationClass="com.github.zpeg.kage.KageCommenter"/>
+
+        <lang.braceMatcher
+            language="Kage"
+            implementationClass="com.github.zpeg.kage.KageBraceMatcher"/>
+
+        <completion.contributor
+            language="Kage"
+            implementationClass="com.github.zpeg.kage.KageCompletionContributor"/>
+
+        <lang.documentationProvider
+            language="Kage"
+            implementationClass="com.github.zpeg.kage.KageDocumentationProvider"/>
+
+        <colorSettingsPage
+            implementation="com.github.zpeg.kage.KageColorSettingsPage"/>
+
+        <liveTemplateContext
+            contextId="KAGE"
+            implementation="com.github.zpeg.kage.KageTemplateContextType"/>
+
+        <defaultLiveTemplates file="/liveTemplates/Kage.xml"/>
+    </extensions>
+</idea-plugin>

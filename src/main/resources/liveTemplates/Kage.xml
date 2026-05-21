@@ -1,0 +1,58 @@
+<templateSet group="Kage">
+    <template name="fragment" value="package main&#10;&#10;func Fragment(dstPos vec4, srcPos vec2, color vec4) vec4 {&#10;&#9;$END$&#10;&#9;return vec4(0.5, 0.0, 0.0, 1.0)&#10;}"
+              description="Kage Fragment entrypoint" toReformat="false" toShortenFQNames="false">
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+
+    <template name="vec2" value="vec2($X$, $Y$)" description="vec2 constructor" toReformat="false" toShortenFQNames="false">
+        <variable name="X" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <variable name="Y" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+    <template name="vec3" value="vec3($X$, $Y$, $Z$)" description="vec3 constructor" toReformat="false" toShortenFQNames="false">
+        <variable name="X" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <variable name="Y" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <variable name="Z" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+    <template name="vec4" value="vec4($X$, $Y$, $Z$, $W$)" description="vec4 constructor" toReformat="false" toShortenFQNames="false">
+        <variable name="X" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <variable name="Y" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <variable name="Z" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <variable name="W" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+
+    <template name="imageSrcNAt" value="imageSrc$N$At($END$)" description="Sample source image N at texel coords" toReformat="false" toShortenFQNames="false">
+        <variable name="N" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true"/>
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+    <template name="imageSrcTextureSize" value="imageSrcTextureSize()" description="Source texture size in pixels" toReformat="false" toShortenFQNames="false">
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+    <template name="imageSrcRegionOnTexture" value="imageSrcRegionOnTexture()" description="Source region origin and size on texture" toReformat="false" toShortenFQNames="false">
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+
+    <template name="clamp" value="clamp($X$, $MIN$, $MAX$)" description="Clamp x to [min, max]" toReformat="false" toShortenFQNames="false">
+        <variable name="X" expression="" defaultValue="" alwaysStopAt="true"/>
+        <variable name="MIN" expression="" defaultValue="&quot;0.0&quot;" alwaysStopAt="true"/>
+        <variable name="MAX" expression="" defaultValue="&quot;1.0&quot;" alwaysStopAt="true"/>
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+    <template name="mix" value="mix($A$, $B$, $T$)" description="Linear interpolation a..b by t" toReformat="false" toShortenFQNames="false">
+        <variable name="A" expression="" defaultValue="" alwaysStopAt="true"/>
+        <variable name="B" expression="" defaultValue="" alwaysStopAt="true"/>
+        <variable name="T" expression="" defaultValue="" alwaysStopAt="true"/>
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+    <template name="smoothstep" value="smoothstep($EDGE0$, $EDGE1$, $X$)" description="Smooth Hermite interpolation" toReformat="false" toShortenFQNames="false">
+        <variable name="EDGE0" expression="" defaultValue="&quot;0.0&quot;" alwaysStopAt="true"/>
+        <variable name="EDGE1" expression="" defaultValue="&quot;1.0&quot;" alwaysStopAt="true"/>
+        <variable name="X" expression="" defaultValue="" alwaysStopAt="true"/>
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+    <template name="discard" value="discard()" description="Discard the fragment" toReformat="false" toShortenFQNames="false">
+        <context><option name="KAGE" value="true"/></context>
+    </template>
+</templateSet>

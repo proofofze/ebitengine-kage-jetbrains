@@ -1,0 +1,26 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+local.properties
+
+# IntelliJ Platform Gradle Plugin caches / sandbox
+.intellijPlatform/
+.qodana/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Kotlin
+.kotlin/
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json
+
+# OS / misc
+.DS_Store
+*.log
