@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # Keep pinned GitHub Actions (and their SHAs) patched.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+
+  # Keep Gradle plugins and dependencies patched.
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: build
