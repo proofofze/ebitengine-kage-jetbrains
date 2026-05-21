@@ -62,26 +62,6 @@ Edit the `intellijPlatform { intellijIdeaCommunity("…") }` line in
 `build.gradle.kts`. Swap for `goland(…)`, `clion(…)`, etc. The language support
 is IDE-agnostic.
 
-## Architecture
-
-Lexer-based ("Option C") — full IDE features without a hand-maintained grammar.
-
-| Concern            | Class / file                                       |
-|--------------------|----------------------------------------------------|
-| Language / filetype| `KageLanguage`, `KageFileType`, `KageFile`         |
-| Lexing             | `KageLexer` (hand-written, no codegen)             |
-| Flat PSI           | `KageParserDefinition` (unlocks completion + hover)|
-| Highlighting       | `KageSyntaxHighlighter`, `KageSyntaxHighlighterFactory` |
-| Completion         | `KageCompletionContributor`                        |
-| Hover docs         | `KageDocumentationProvider`, `KageDocs`            |
-| Braces / comments  | `KageBraceMatcher`, `KageCommenter`                |
-| Snippets           | `resources/liveTemplates/Kage.xml`, `KageTemplateContextType` |
-| Color settings     | `KageColorSettingsPage`                            |
-| Token definitions  | `KageTokens` (keywords / types / builtins)         |
-
-Want go-to-definition, find-usages, and rename? See
-[CONTRIBUTING.md](CONTRIBUTING.md) → "Going further (real grammar)".
-
 ## Contributing
 
 Issues and PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
