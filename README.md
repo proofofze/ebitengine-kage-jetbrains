@@ -35,6 +35,8 @@ Native (lexer-based) port of the VS Code extension
 
 ## Install
 
+[![Install](https://img.shields.io/badge/JetBrains-Install_from_Marketplace-000?logo=jetbrains)](https://plugins.jetbrains.com/plugin/31923-kage)
+
 ### From a release zip (sideload)
 
 1. Download `kage-jetbrains-<version>.zip` (from Releases, or `./gradlew buildPlugin`
